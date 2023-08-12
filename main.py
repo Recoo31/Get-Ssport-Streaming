@@ -33,7 +33,7 @@ def get_live_content_url(token):
     
     available_titles = [(i["ID"], i["Title"]) for i in contents]
 
-    print("Available titles:")
+    print("Available Live Streams:")
     for idx, title in enumerate(available_titles):
         print(f"{idx + 1}. {title[1]}")
 
