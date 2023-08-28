@@ -78,6 +78,7 @@ def main():
     url_la = get_live_content_url(token)
     org_url = get_original_url(url_la)
     print(org_url)
+    open("Ssport_Live.txt","w").write(org_url)
 
 if __name__ == "__main__":
     main()
