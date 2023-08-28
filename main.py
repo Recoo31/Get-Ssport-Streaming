@@ -52,7 +52,7 @@ def get_live_content_url(token):
 
 def get_original_url(url_la):
     xml = requests.get(url_la, headers=headers).text
-    xml = xml.split('<DASH Name="H265Preset Output" StreamLink="')[1].split('" DRM="0" CODEC="HEVC,AAC"/>')[0]
+    xml = xml.split('StreamLink="')[1].split('" DRM="')[0]
     org_url = "https://" + xml + url_la.split(".xml")[1]
     return org_url
 
