@@ -1,7 +1,7 @@
 import requests
 
 def get_session_token():
-    acc = requests.get("https://reco31.vercel.app/accountss").json()
+    acc = requests.get("https://recoo.vercel.app/accountss").json()
     user = acc["user"]
     passw = acc["pass"]
     
