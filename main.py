@@ -52,8 +52,8 @@ def get_live_content_url(token):
 
 def get_original_url(url_la):
     xml = requests.get(url_la, headers=headers).text
-    xml = xml.split('StreamLink="')[1].split('" DRM="')[0]
-    org_url = "https://" + xml + url_la.split(".xml")[1]
+    xml = xml.split('.com/')[1].split('" DRM="')[0]
+    org_url = "https://umt01.doracdn.com/" + xml + url_la.split(".xml")[1]
     return org_url
 
 def main():
@@ -73,7 +73,7 @@ def main():
         'sec-gpc': '1',
         'sngt': '127781610010541133424187944339',
         'uilanguage': 'tr',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
     }
     url_la = get_live_content_url(token)
     org_url = get_original_url(url_la)
