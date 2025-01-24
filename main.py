@@ -52,9 +52,8 @@ def get_live_content_url(token):
 
 def get_original_url(url_la):
     xml = requests.get(url_la, headers=headers).text
-    xml = xml.split('.com/')[1].split('" DRM="')[0]
-    org_url = "https://umt01.doracdn.com/" + xml + url_la.split(".xml")[1]
-    return org_url
+    url = xml.split('StreamLink="')[1].split('" DRM="0')[0]
+    return "https://"+url
 
 def main():
     token = get_session_token()
